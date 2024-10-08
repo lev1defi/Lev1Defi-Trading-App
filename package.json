@@ -1,0 +1,22 @@
+{
+  "name": "lev1defi-trading-app",
+  "version": "1.0.0",
+  "description": "Desktop Trading app for lev1defi",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/node": "^22.7.5",
+    "electron": "^32.1.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "lightweight-charts": "^4.2.1"
+  }
+}
