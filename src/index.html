@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lightweight Charts in Electron</title>
+    <title>Electron App</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
         }
         #chart-container {
             width: 100%;
-            height: 100vh;  /* Ensure the container fills the viewport height */
+            height: 100vh;
         }
     </style>
 </head>
 <body>
-    <!-- Container for the chart -->
     <div id="chart-container"></div>
-
-    <!-- Ensure renderer script is loaded after the DOM is ready -->
-    <script src="./renderer.js"></script>
 </body>
 </html>

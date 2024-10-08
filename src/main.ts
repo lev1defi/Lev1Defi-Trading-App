@@ -1,5 +1,11 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -18,13 +24,15 @@ function createWindow(): void {
         width: 1200,
         height: 800,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, 'preload.mjs'),
             nodeIntegration: true,
-            contextIsolation: false
+            contextIsolation: true
         }
     });
 
     mainWindow.loadFile(path.join(__dirname, 'index.html'));
+
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', () => {
         mainWindow = null;
