@@ -6,10 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "electron .",
-
-    
     "build": "webpack --config webpack.config.cjs",
-    "dev": "electron . --inspect=5858"
+    "dev": "npm run build && electron . --inspect=5858"
   },
   "keywords": [],
   "author": "",

@@ -1,8 +1,9 @@
 const { createChart } = require('lightweight-charts');
 
 const chartContainer = document.getElementById('chart-container');
+let chart:any = null;
 if (chartContainer) {
-    const chart = createChart(chartContainer, {
+    chart = createChart(chartContainer, {
         width: chartContainer.clientWidth,
         height: chartContainer.clientHeight,
         layout: {
@@ -139,3 +140,20 @@ if (chartContainer) {
     lowerBand.setData(lowerBandData);
 
 }
+
+window.addEventListener('resize', () => {
+    const displayWidth = window.innerWidth;
+    const displayHeight = window.innerHeight;
+    console.log('Resizing chart... 2', displayWidth, displayHeight);
+    const chartContainer = document.getElementById('chart-container');
+    if (chartContainer) {
+        
+        console.log('Resizing chart... 2', displayWidth, displayHeight);
+        chart.resize(
+            displayWidth-30,
+            displayHeight-100
+        );
+    } else {
+        console.log('Chart container not found');
+    }
+});

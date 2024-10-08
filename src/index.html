@@ -9,13 +9,28 @@
             margin: 0;
             padding: 0;
         }
+        .top-toolbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            height: 50px;
+            flex-shrink: 0;
+        }
         #chart-container {
-            width: 100%;
-            height: 100vh;
+            width: 97vw;
+            height: 90vh;
         }
     </style>
+
 </head>
 <body>
+    <div class="top-toolbar">
+        <button class="placeholder-button">Button 1</button>
+        <button class="placeholder-button">Button 2</button>
+        <button class="placeholder-button">Button 3</button>
+    </div>
     <div id="chart-container"></div>
 </body>
 </html>
